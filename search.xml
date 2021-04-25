@@ -1,6 +1,162 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>如何0成本搭建你的个人博客</title>
+    <url>/blog%E6%90%AD%E5%BB%BA/Hexo/</url>
+    <content><![CDATA[<p>如何从0开始，0成本搭建你的个人博客</p>
+<span id="more"></span>
+
+<h2 id="前置工具的安装与配置"><a href="#前置工具的安装与配置" class="headerlink" title="前置工具的安装与配置"></a>前置工具的安装与配置</h2><h3 id="git-的安装与配置"><a href="#git-的安装与配置" class="headerlink" title="git 的安装与配置"></a>git 的安装与配置</h3><h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>前往git官网下载：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
+<ol>
+<li>点击 <code>Downloads</code>下载，选择 <code>Windows</code></li>
+</ol>
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/20210424173548.png"></p>
+<ol start="2">
+<li><p>安装</p>
+<p>和传统的软件安装相似，这里就不在赘述，只标明需注意的地方</p>
+</li>
+</ol>
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423102821616.png"></p>
+<blockquote>
+<ol>
+<li>additional icons ：选择是否创建桌面快捷方式</li>
+<li>Use a TruType font in all console windows： 在命令行中是否使用 TruthType 编码</li>
+<li>Chek daily for Git Windows update： Git 的更新检查</li>
+</ol>
+<p><em><strong>第 2 条默认勾选，1 3 根据自己的个人喜好勾选</strong></em></p>
+<p>其余步骤直接下一步</p>
+</blockquote>
+<p>安装完成</p>
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423103811825.png" alt="image-20210423103811825"></p>
+<p>如何检验</p>
+<p>打开<code>CMD</code> or <code>Windows Terminal</code>| 后续将称shell,输入</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+
+<p>出现版本号表示安装成功</p>
+<blockquote>
+<p>CMD打开方式</p>
+<pre><code>1. `win+r`输入cmd回车
+2. 在启动菜单搜索cmd打开
+</code></pre>
+</blockquote>
+<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><ol>
+<li><p>Debian</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install git -y</span><br></pre></td></tr></table></figure></li>
+<li><p>Centos</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install git -y</span><br></pre></td></tr></table></figure></li>
+<li><p>ArchLinux</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S git -y</span><br></pre></td></tr></table></figure></li>
+<li><p>openSuse</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo zypper install git -y</span><br></pre></td></tr></table></figure>
+
+<p>适用于相应发行版及其衍生版本</p>
+<blockquote>
+<p> 安装完成验证代码同Windows</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><h4 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h4><p>官网 <a href="http://www.nodejs.org/">www.nodejs.org</a> 下载LTS版本，安装直接下一步即可</p>
+<p>验证方式</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
+
+<p>输入后回车若显示版本号则表示安装完成</p>
+<h4 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h4><p>安装方式同 <code>Git</code> ，只需将相应命令中的<code>git</code>换为<code>nodejs npm</code>即可</p>
+<p>验证方式同 Windows</p>
+<h3 id="npm换源"><a href="#npm换源" class="headerlink" title="npm换源"></a>npm换源</h3><p>考虑国内的网络环境，npm下载速度过慢，安装 <code>cnpm</code> 并使用淘宝镜像源以提升下载速度，安装后将使用 cnpm 命令替换 npm 命令，如感觉自己网络状况良好 or 可魔法上网 可以自行忽略此步骤，且后续操作继续使用 npm 命令       </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<hr>
+<h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><h3 id="hexo-框架的安装"><a href="#hexo-框架的安装" class="headerlink" title="hexo 框架的安装"></a>hexo 框架的安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p> windows 和 linux 中的命令相同，且之后的操作中，Linux与windows中的命令相同，后续操作中将只会在有差异的地方进行标明。</p>
+</blockquote>
+<p>安装验证</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<hr>
+<h3 id="创建-Blog-文件夹"><a href="#创建-Blog-文件夹" class="headerlink" title="创建 Blog 文件夹"></a>创建 Blog 文件夹</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd 你想创建的位置的母文件夹（及blog文件夹将在此目录下创建)</span><br><span class="line">mkdir blog</span><br><span class="line">cd blog #进入blog文件夹</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>后续的操作中，如果出现错误，可删掉此文件夹，并重新创建及配置</p>
+</blockquote>
+<hr>
+<h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423122910824.png" alt="image-20210423122910824"></p>
+<hr>
+<h3 id="安装git插件"><a href="#安装git插件" class="headerlink" title="安装git插件"></a>安装git插件</h3><p>回到命令行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>修改blog文件下的_config.yml</p>
+<p>修改文件最底端</p>
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423132804441.png" alt="image-20210423132804441"></p>
+<blockquote>
+<p>这两项工作和下面的云端推送有关</p>
+</blockquote>
+<hr>
+<h3 id="启动博客"><a href="#启动博客" class="headerlink" title="启动博客"></a>启动博客</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s		#hexo server 可简写</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423123257355.png" alt="image-20210423123257355"></p>
+<p>通过生成的网址进入本地的博客预览</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">localhost:4000</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423123420940.png" alt="image-20210423123420940"></p>
+<h3 id="创建一篇博客"><a href="#创建一篇博客" class="headerlink" title="创建一篇博客"></a>创建一篇博客</h3><blockquote>
+<p>断开博客的方式为 <code>ctl + c</code>     在命令行中</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n &quot;我的第一篇博客&quot;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423124015925.png" alt="image-20210423124015925"></p>
+<p>生成完毕，如果想要修改其中的内容可通过vim or typora(markdown编辑器) 进行操作</p>
+<p>修改完成后可通过hexo s启动进行本地浏览</p>
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423124347039.png" alt="image-20210423124347039"></p>
+<p>到目前为止，hexo博客的搭建已经完成，接下来只需要将博客推送到云端即可</p>
+<hr>
+<h2 id="云端推送"><a href="#云端推送" class="headerlink" title="云端推送"></a>云端推送</h2><h3 id="注册-github-账号"><a href="#注册-github-账号" class="headerlink" title="注册 github 账号"></a>注册 github 账号</h3><p>==注册时一定注意用户名的创建，未来对博客进行访问时需使用ID==</p>
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423125548066.png" alt="image-20210423125548066"></p>
+<p>然后进行邮箱验证后即可使用</p>
+<hr>
+<p>创建新的仓库</p>
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423125746484.png" alt="image-20210423125746484"></p>
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423125952989.png" alt="image-20210423125952989"></p>
+<p>==必须为你的id.github.io==</p>
+<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423130104142.png" alt="image-20210423130104142"></p>
+<p>创建完成</p>
+<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><p>windows下第一次使用github需要先进行配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;你的github注册邮箱&quot;</span><br><span class="line">git config --global user.name &quot;你的githubid&quot;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>讲博客推送到远端</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+
+
+<blockquote>
+<p>每次编写完新的博客后只需在blog文件夹的命令行窗口使用该命令即可推送到远程</p>
+</blockquote>
+<h3 id="访问博客"><a href="#访问博客" class="headerlink" title="访问博客"></a>访问博客</h3><p>只需输入 你的githubid.github.io 即可访问你的博客</p>
+]]></content>
+      <categories>
+        <category>blog搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何使用 markdown 编辑器</title>
     <url>/%E7%BC%96%E8%BE%91%E5%99%A8/markdown/</url>
     <content><![CDATA[<h2 id="什么是-markdown"><a href="#什么是-markdown" class="headerlink" title="什么是 markdown"></a>什么是 markdown</h2><p>Markdown是一种轻量级标记语言，排版语法简洁，让人们更多地关注内容本身而非排版。它使用易读易写的纯文本格式编写文档，可与HTML混编，可导出 HTML、PDF 以及本身的 .md 格式的文件。因简洁、高效、易读、易写，Markdown被大量使用，如Github、Wikipedia等网站，如各大博客平台：WordPress、Drupal、简书等。</p>
@@ -218,162 +374,6 @@
       </categories>
       <tags>
         <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>如何0成本搭建你的个人博客</title>
-    <url>/blog%E6%90%AD%E5%BB%BA/Hexo/</url>
-    <content><![CDATA[<p>如何从0开始，0成本搭建你的个人博客</p>
-<span id="more"></span>
-
-<h2 id="前置工具的安装与配置"><a href="#前置工具的安装与配置" class="headerlink" title="前置工具的安装与配置"></a>前置工具的安装与配置</h2><h3 id="git-的安装与配置"><a href="#git-的安装与配置" class="headerlink" title="git 的安装与配置"></a>git 的安装与配置</h3><h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><p>前往git官网下载：<a href="https://git-scm.com/">https://git-scm.com/</a></p>
-<ol>
-<li>点击 <code>Downloads</code>下载，选择 <code>Windows</code></li>
-</ol>
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/20210424173548.png"></p>
-<ol start="2">
-<li><p>安装</p>
-<p>和传统的软件安装相似，这里就不在赘述，只标明需注意的地方</p>
-</li>
-</ol>
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423102821616.png"></p>
-<blockquote>
-<ol>
-<li>additional icons ：选择是否创建桌面快捷方式</li>
-<li>Use a TruType font in all console windows： 在命令行中是否使用 TruthType 编码</li>
-<li>Chek daily for Git Windows update： Git 的更新检查</li>
-</ol>
-<p><em><strong>第 2 条默认勾选，1 3 根据自己的个人喜好勾选</strong></em></p>
-<p>其余步骤直接下一步</p>
-</blockquote>
-<p>安装完成</p>
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423103811825.png" alt="image-20210423103811825"></p>
-<p>如何检验</p>
-<p>打开<code>CMD</code> or <code>Windows Terminal</code>| 后续将称shell,输入</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-
-<p>出现版本号表示安装成功</p>
-<blockquote>
-<p>CMD打开方式</p>
-<pre><code>1. `win+r`输入cmd回车
-2. 在启动菜单搜索cmd打开
-</code></pre>
-</blockquote>
-<h4 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h4><ol>
-<li><p>Debian</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo apt install git -y</span><br></pre></td></tr></table></figure></li>
-<li><p>Centos</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo yum install git -y</span><br></pre></td></tr></table></figure></li>
-<li><p>ArchLinux</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo pacman -S git -y</span><br></pre></td></tr></table></figure></li>
-<li><p>openSuse</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">sudo zypper install git -y</span><br></pre></td></tr></table></figure>
-
-<p>适用于相应发行版及其衍生版本</p>
-<blockquote>
-<p> 安装完成验证代码同Windows</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h3><h4 id="Windows-1"><a href="#Windows-1" class="headerlink" title="Windows"></a>Windows</h4><p>官网 <a href="http://www.nodejs.org/">www.nodejs.org</a> 下载LTS版本，安装直接下一步即可</p>
-<p>验证方式</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br></pre></td></tr></table></figure>
-
-<p>输入后回车若显示版本号则表示安装完成</p>
-<h4 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h4><p>安装方式同 <code>Git</code> ，只需将相应命令中的<code>git</code>换为<code>nodejs npm</code>即可</p>
-<p>验证方式同 Windows</p>
-<h3 id="npm换源"><a href="#npm换源" class="headerlink" title="npm换源"></a>npm换源</h3><p>考虑国内的网络环境，npm下载速度过慢，安装 <code>cnpm</code> 并使用淘宝镜像源以提升下载速度，安装后将使用 cnpm 命令替换 npm 命令，如感觉自己网络状况良好 or 可魔法上网 可以自行忽略此步骤，且后续操作继续使用 npm 命令       </p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<hr>
-<h2 id="博客搭建"><a href="#博客搭建" class="headerlink" title="博客搭建"></a>博客搭建</h2><h3 id="hexo-框架的安装"><a href="#hexo-框架的安装" class="headerlink" title="hexo 框架的安装"></a>hexo 框架的安装</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p> windows 和 linux 中的命令相同，且之后的操作中，Linux与windows中的命令相同，后续操作中将只会在有差异的地方进行标明。</p>
-</blockquote>
-<p>安装验证</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo -v</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<hr>
-<h3 id="创建-Blog-文件夹"><a href="#创建-Blog-文件夹" class="headerlink" title="创建 Blog 文件夹"></a>创建 Blog 文件夹</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cd 你想创建的位置的母文件夹（及blog文件夹将在此目录下创建)</span><br><span class="line">mkdir blog</span><br><span class="line">cd blog #进入blog文件夹</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>后续的操作中，如果出现错误，可删掉此文件夹，并重新创建及配置</p>
-</blockquote>
-<hr>
-<h3 id="初始化博客"><a href="#初始化博客" class="headerlink" title="初始化博客"></a>初始化博客</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423122910824.png" alt="image-20210423122910824"></p>
-<hr>
-<h3 id="安装git插件"><a href="#安装git插件" class="headerlink" title="安装git插件"></a>安装git插件</h3><p>回到命令行</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
-
-<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>修改blog文件下的_config.yml</p>
-<p>修改文件最底端</p>
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423132804441.png" alt="image-20210423132804441"></p>
-<blockquote>
-<p>这两项工作和下面的云端推送有关</p>
-</blockquote>
-<hr>
-<h3 id="启动博客"><a href="#启动博客" class="headerlink" title="启动博客"></a>启动博客</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s		#hexo server 可简写</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423123257355.png" alt="image-20210423123257355"></p>
-<p>通过生成的网址进入本地的博客预览</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">localhost:4000</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423123420940.png" alt="image-20210423123420940"></p>
-<h3 id="创建一篇博客"><a href="#创建一篇博客" class="headerlink" title="创建一篇博客"></a>创建一篇博客</h3><blockquote>
-<p>断开博客的方式为 <code>ctl + c</code>     在命令行中</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n &quot;我的第一篇博客&quot;</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423124015925.png" alt="image-20210423124015925"></p>
-<p>生成完毕，如果想要修改其中的内容可通过vim or typora(markdown编辑器) 进行操作</p>
-<p>修改完成后可通过hexo s启动进行本地浏览</p>
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423124347039.png" alt="image-20210423124347039"></p>
-<p>到目前为止，hexo博客的搭建已经完成，接下来只需要将博客推送到云端即可</p>
-<hr>
-<h2 id="云端推送"><a href="#云端推送" class="headerlink" title="云端推送"></a>云端推送</h2><h3 id="注册-github-账号"><a href="#注册-github-账号" class="headerlink" title="注册 github 账号"></a>注册 github 账号</h3><p>==注册时一定注意用户名的创建，未来对博客进行访问时需使用ID==</p>
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423125548066.png" alt="image-20210423125548066"></p>
-<p>然后进行邮箱验证后即可使用</p>
-<hr>
-<p>创建新的仓库</p>
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423125746484.png" alt="image-20210423125746484"></p>
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423125952989.png" alt="image-20210423125952989"></p>
-<p>==必须为你的id.github.io==</p>
-<p><img src="https://gitee.com/nuonianpass/blogimag/raw/master/img/image-20210423130104142.png" alt="image-20210423130104142"></p>
-<p>创建完成</p>
-<h3 id="部署到远端"><a href="#部署到远端" class="headerlink" title="部署到远端"></a>部署到远端</h3><p>windows下第一次使用github需要先进行配置</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.email &quot;你的github注册邮箱&quot;</span><br><span class="line">git config --global user.name &quot;你的githubid&quot;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p>讲博客推送到远端</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
-
-
-<blockquote>
-<p>每次编写完新的博客后只需在blog文件夹的命令行窗口使用该命令即可推送到远程</p>
-</blockquote>
-<h3 id="访问博客"><a href="#访问博客" class="headerlink" title="访问博客"></a>访问博客</h3><p>只需输入 你的githubid.github.io 即可访问你的博客</p>
-]]></content>
-      <categories>
-        <category>blog搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>blog</tag>
       </tags>
   </entry>
 </search>
